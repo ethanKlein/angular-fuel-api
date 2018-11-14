@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Choose Your Vehicle</h1>
+    <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
+      <!-- <div class="form-group">
+        <label for="make">Make</label>
+        <input type="text" class="form-control" id="make" required>
+      </div> -->
+
+      <div class="form-group">
+        <label for="makes">Choose a Make</label>
+        <select class="form-control" id="makes" required [(ngModel)]="model.make" name="make">
+          <option *ngFor="let make of makes" [value]="make">{{make}}</option>
+        </select>
+      </div>
+
+
+
+      <!-- <div class="form-group">
+        <label for="make">Make</label>
+        <input type="text" class="form-control" id="make" required [(ngModel)]="model.make" name="make">
+      </div> -->
+
+      <div class="form-group">
+        <label for="vehicleModel">vehicleModel</label>
+        <input type="text" class="form-control" id="vehicleModel" required [(ngModel)]="model.vehicleModel" name="vehicleModel">
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" class="form-control" id="year" required [(ngModel)]="model.year" name="year">
+      </div>
+
+      Click submit to find the car image for: <br />
+      {{model.make}} {{model.vehicleModel}} {{model.year}}
+
+      <br /><br />
+
+      <button (click)="onClickMe()" type="submit" class="btn btn-success">Submit</button>
+
+      <br /><br />
+      {{clickMessage}}
+
+    </form>
+</div>
