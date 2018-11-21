@@ -14,8 +14,6 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    let obs = this.http.get(this.getVehicleIdUrl);
-    obs.subscribe((response) => console.log(response));
   }
 
 }
