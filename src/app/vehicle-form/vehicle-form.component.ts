@@ -87,4 +87,6 @@ export class VehicleFormComponent implements OnInit {
 
   onSubmit() { this.submitted = true }
 
+  ngOnInit() {}
+
 }
