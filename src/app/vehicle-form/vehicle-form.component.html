@@ -26,7 +26,10 @@
       </form>
     </div>
     <div class="col-sm-7">
-      <div *ngIf="showError" style="margin-top: 40px;"><h1 style="color: red;">There was an error in your request</h1></div>
+      <div *ngIf="showError" style="margin-top: 40px; text-align: center; width: 400px;">
+        <h2 style="color: red;">Sorry, something went wrong.<br /><br />
+        Try another Make/Model/Year combo or check with Ethan</h2>
+      </div>
       <img *ngIf="!showError" [src]="imageUrl" />
     </div>
   </div>
