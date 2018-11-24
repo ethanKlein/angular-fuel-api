@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-5">
-      <h3>Values Returned From Claims Center</h3>
+      <h3>Enter Vehicle Data from Claims Center</h3>
       <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
         <div class="form-group">
           <label for="makes">vehicleMake</label>
@@ -26,7 +26,8 @@
       </form>
     </div>
     <div class="col-sm-7">
-      <img [src]="imageUrl" />
+      <div *ngIf="showError" style="margin-top: 40px;"><h1 style="color: red;">There was an error in your request</h1></div>
+      <img *ngIf="!showError" [src]="imageUrl" />
     </div>
   </div>
 </div>
