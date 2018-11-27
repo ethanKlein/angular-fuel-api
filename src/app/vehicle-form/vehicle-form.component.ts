@@ -18,7 +18,7 @@ export class VehicleFormComponent implements OnInit {
   getVehicleIdUrl = 'https://api.fuelapi.com/v1/json/vehicles/';
   getProductInfoUrl = 'https://api.fuelapi.com/v1/json/vehicle/';
   productId = '2';
-  productFormatIDs = '12';
+  productFormatIDs = '12, 33';
   shotCode = '037';
   apiKey = '06b3ad37-40ec-4466-9da4-dba806d212f1';
   stringAtEndOfImageUrl = "?fuel_app_key=0f615c30c3534a95a20f3ff8e313e0e6&Expires=1542386307&Signature=YJc8Af3CQt7cEKmznvJhw3U1y7BlNXpZaSZ-z3Ak8GQXlSx9rC6houQ4XJvus2wmyjXgNUt-q0ahIZkTqPCCOPKRcK72FF4z6lgtNOobGlkqtpoXNW4t0k3QfQ9fUAxwIgqi7U4pWSnMjOZcpHJ8TWRSlqj1AYGlrOgfd5uoQZFEQ0kNhw-qOXXxh4Nu7VZeZTAIKxnVAu29oCzSshn41PWvYftc8JSY5NJFBxsO5fRasBp-zm71ueV~BabSg2xcCnAzaXV1DKX9ucZfODNWxfcYrThYLhLwDuzVXvIWoahMoaeMXv24-igEHjFOsUb4AdLhkjppD9tkhStPlArQgw__&Key-Pair-Id=APKAJEHLXC3UBWDEGR3A";
@@ -39,7 +39,9 @@ export class VehicleFormComponent implements OnInit {
                            '?api_key=' + this.apiKey +
                            '&model=' + this.model.vehicleModel +
                            '&make=' + this.getVehicleLongName() +
+                           // '&trim=' + " " +
                            '&year=' + this.model.year;
+
     let obs = this.http.get(this.getVehicleIdUrl);
     obs.subscribe((response) => this.callbackAfterGettingVehicleId(response), err => this.showError = true);
   }
